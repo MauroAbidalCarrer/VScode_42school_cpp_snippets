@@ -13,6 +13,7 @@
 			"",
 			"class ${2:className}$0",
 			"{",
+			"public:",
 			"\t//constructors and destructors",
 			"\t${2:className}();",
 			"\t${2:className}(const ${2:className}& other);",
