@@ -1,0 +1,55 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 fo tab strops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	"Cannonic class header": {
+		"prefix": "#ifndef",
+		"body": [
+			"#ifndef ${1:guard}",
+			"# define ${1:guard}",
+			"# include <iostream>",
+			"# include <string>",
+			"",
+			"class ${2:className}$0",
+			"{",
+			"\t//constructors and destructors",
+			"\t${2:className}();",
+			"\t${2:className}(const ${2:className}& other);",
+			"\t~${2:className}();",
+			"\t//overloads",
+			"\t${2:className}& operator=(const ${2:className}& rhs);",
+			"};",
+			"#endif"
+		],
+		"description": "Writes cannonic class header in an include guard."
+	},
+	"Cannonic class implementation": {
+		"prefix": "#include\"",
+		"body": [
+			"#include \"${1:className}\".hpp",
+			"# include <iostream>",
+			"# include <string>",
+			"$0",
+			"//constructors and destructors",
+			"${1:className}::${1:className}()",
+			"{",
+			"\t//std::cout << \"Default constructor of ${1:className} called.\" << std::endl;",
+			"}",
+			"${1:className}::${1:className}(const ${1:className}& other)",
+			"{",
+			"\t//std::cout << \"Copy constructor of ${1:className} called.\" << std::endl;",
+			"}",
+			"${1:className}::~${1:className}()",
+			"{",
+			"\t//std::cout << \"Destructor of ${1:className} called.\" << std::endl;",
+			"}",
+			"//overloads",
+			"${1:className}& ${1:className}::operator=(const ${1:className}& other)",
+			"{",
+			"\treturn *this;",
+			"}",
+		],
+		"description": "Writes cannonic class header in an include guard."
+	}
+}
